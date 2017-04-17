@@ -7,6 +7,10 @@ angular.module('MsgApp', [])
 MsgController.$inject = ['$scope'];
 function MsgController($scope) {
   $scope.name = "Yaakov";
+
+  $scope.sayMessage =function () {
+    return "Junghyun likes to eat healthy snacks at night!"
+  };
 }
 
 })();
