@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Document</title>
+</head>
+<body ng-app="myFirstDirective">
+
+  <div ng-controller="FirstListController as list">
+    <h1>List1</h1>
+    <input type="text" ng-model="list.itemName">
+    <input type="text" ng-model="list.itemQuantity">
+    <button ng-click="list.addItem()">추가!</button>
+    <ul>
+      <list-item></list-item>
+    </ul>
+  </div>
+
+  <div ng-controller="SecondListController as list">
+    <h1>List2</h1>
+    <input type="text" ng-model="list.itemName">
+    <input type="text" ng-model="list.itemQuantity">
+    <button ng-click="list.addItem()">추가!</button>
+    <ul>
+      <li ng-repeat="item in list.items">
+        <list-item-description></list-item-description>
+      </li>
+    </ul>
+    <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+  </div>
+
+</body>
+</html>

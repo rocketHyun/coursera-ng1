@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Document</title>
+</head>
+<body ng-app="RestaurantApp">
+  <h1>Restaurant Category</h1>
+  <div ng-controller="CategoryListController as categories">
+    <ul>
+      <li ng-repeat="category in categories.list">
+        <a href="" ng-click="categories.logMenuItems(category.short_name);">[{{category.short_name}}]</a> {{category.name}}
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

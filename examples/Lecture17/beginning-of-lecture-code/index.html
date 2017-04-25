@@ -11,10 +11,10 @@
     <h1>ng-repeat</h1>
     <div ng-controller='ShoppingListController'>
       <!-- Shopping List #1: -->
-      <h3>Shopping List:</h3>
+      <!-- <h3>Shopping List:</h3>
       <ul>
         <li ng-repeat="item in shoppingList1">{{ item }}</li>
-      </ul>
+      </ul> -->
 
       <!-- Shopping List #2: -->
       <!-- <ul>
@@ -22,16 +22,26 @@
       </ul> -->
 
       <!-- Shopping List #3: -->
-      <!-- <input type="text" ng-model="shoppingList2[0].quantity">
-      -->
+      <input type="text" ng-model="shoppingList2[0].quantity">
+
       <!-- <ul>
         <li ng-repeat="item in shoppingList2">{{$index + 1}}. Buy {{item.quantity}} of {{item.name}}(s)</li>
+      </ul> -->
+
+      <ul>
+        <li ng-repeat="one in shoppingList2">
+          {{$index+1}}. Buy {{one.name}} * {{one.quantity}}
+        </li>
       </ul>
-      -->
+
       <!-- <input type="text" ng-model="newItemName" placeholder="item name">
       <input type="text" ng-model="newItemQuantity" placeholder="item quantity">
-      <button ng-click="addToList()">Add To List</button>
-      -->
+      <button ng-click="addToList()">Add To List</button> -->
+
+      <input type="text" ng-model="newItemTitle" placeholder="item Title">
+      <input type="text" ng-model="newItemTimes" placeholder="new item times">
+      <button ng-click="addToShoppingList()">Add To Shopping List</button>
+
     </div>
   </body>
 </html>

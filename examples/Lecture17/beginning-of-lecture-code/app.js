@@ -29,6 +29,19 @@ angular.module('ShoppingListApp', [])
 
 ShoppingListController.$inject = ['$scope'];
 function ShoppingListController($scope) {
+  $scope.showNumberOfWatchers = function () {
+    console.log("# of Watchers: ", $scope.$$watchersCount);
+  };
+
+  $scope.addToShoppingList = function () {
+    var newItem = {
+      name: $scope.newItemTitle,
+      quantity: $scope.newItemTimes
+    };
+
+    $scope.shoppingList2.push(newItem);
+  };
+
   $scope.shoppingList1 = shoppingList1;
   $scope.shoppingList2 = shoppingList2;
 }

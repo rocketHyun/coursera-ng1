@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="angular.min.js"></script>
+  <script src="app3.js"></script>
+</head>
+<body ng-app="MyListApp">
+  <div ng-controller="ListController as list">
+    <h2>앵귤러 테스트</h2>
+    <input type="text" ng-model="list.itemName">
+    <input type="text" ng-model="list.itemQuantity">
+    <button ng-click="list.addItem()">추가</button>
+    <div>
+      <ul>
+        <li ng-repeat="item in list.items">
+          {{item.name}}을(를) {{item.quantity}}개 <button ng-click="list.deleteItem($index)">삭제</button>
+        </li>
+      </ul>
+      <p ng-if="list.errorMessage">{{list.errorMessage}}</p>
+    </div>
+  </div>
+</body>
+</html>
