@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div ng-controller="ShoppingListController as list">
+  <input type="text" ng-model="list.itemName">
+  <input type="text" ng-model="list.itemQuantity">
+  <button ng-click="list.addItem()">추가</button>
+  <shopping-list my-items="list.items" title="{{list.title}}"></shopping-list>
+</div>
+
+<script src="../angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

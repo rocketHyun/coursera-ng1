@@ -16,7 +16,7 @@
     <input type="text" ng-model="list.itemQuantity">
     <button ng-click="list.addItem()">추가!</button>
     <ul>
-      <list-item></list-item>
+      <list-item ng-repeat="item in list.items"></list-item>
     </ul>
   </div>
 
@@ -26,9 +26,7 @@
     <input type="text" ng-model="list.itemQuantity">
     <button ng-click="list.addItem()">추가!</button>
     <ul>
-      <li ng-repeat="item in list.items">
-        <list-item-description></list-item-description>
-      </li>
+      <list-item ng-repeat="item in list.items"></list-item>
     </ul>
     <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
   </div>

@@ -22,7 +22,7 @@ function CategoryListController(MenuCategoriesService) {
     var promise = MenuCategoriesService.getCategoryMenus(shortName)
 
     promise.then(function(response){
-      console.log(response.data)
+      console.log(response)
     })
     .catch(function(error){
       console.log(error)
@@ -53,7 +53,10 @@ function MenuCategoriesService ($http) {
       }
     });
 
-    return response;
+    return response.then(function(){
+      var hello = ["정현", "도희"];
+      return hello;
+    });
   };
 }
 

@@ -27,6 +27,7 @@ function ShoppingListDirective() {
 
 function ShoppingListDirectiveController() {
   var list = this;
+  console.log(this.items);
 
   list.cookiesInList = function () {
     for (var i = 0; i < list.items.length; i++) {

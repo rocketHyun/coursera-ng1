@@ -1,0 +1,6 @@
+<h1>{{title}}</h1>
+<ul>
+  <li ng-repeat="item in list.items">
+    <list-item-description></list-item-description><button ng-click="list.deleteItem($index)">삭제</button>
+  </li>
+</ul>

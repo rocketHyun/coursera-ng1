@@ -1,0 +1,8 @@
+<h3>{{list.titlez}}</h3>
+
+<ul>
+  <li ng-repeat="item in list.itemsz">
+    {{item.name}}({{item.quantity}}개)
+  </li>
+</ul>
+<div ng-if="list.cookiesInList()">WARNING!!</div>
