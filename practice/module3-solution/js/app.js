@@ -27,7 +27,7 @@ function NarrowItDownController (MenuSearchService) {
     search.nothing = false;
 
     search.getList = function(){
-      if(search.searchTerm.replace(/\s+/g, '').length == 0) {
+      if(search.searchTerm.length == 0) {
         search.nothing = true;
         search.found = [];
       } else {
