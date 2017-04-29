@@ -27,15 +27,20 @@ function NarrowItDownController (MenuSearchService) {
     search.nothing = false;
 
     search.getList = function(){
-       MenuSearchService.getMatchedMenuItems(search.searchTerm)
-       .then(function(response){
-         if (response.length==0) {
-           search.nothing = true;
-         } else{
-           search.nothing = false;
-         }
-         search.found = response;
-       });
+      if(search.searchTerm.replace(/\s+/g, '').length == 0) {
+        search.nothing = true;
+        search.found = [];
+      } else {
+         MenuSearchService.getMatchedMenuItems(search.searchTerm)
+         .then(function(response){
+           if (response.length==0) {
+             search.nothing = true;
+           } else{
+             search.nothing = false;
+           }
+           search.found = response;
+         });
+      }
     };
 
     search.remove = function(index) {
