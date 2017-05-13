@@ -1,0 +1,15 @@
+
+<div>
+  <button ui-sref="hotissue">핫이슈로 돌아가기</button>
+</div>
+<h3>검색 결과</h3>
+<ul>
+  <li ng-repeat="news in search.getNews">
+    <a ui-sref="search.detail({index: $index})">
+    <!-- <a href="{{news.link}}" target="_blank"> -->
+      <img ng-if="news.imgurl" src="{{news.imgurl}}" width="100px" />
+      {{news.title}}
+    </a>
+      <ui-view></ui-view>
+  </li>
+</ul>

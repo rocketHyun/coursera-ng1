@@ -1,0 +1,7 @@
+<h3>{{ $ctrl.title }}</h3>
+<ul>
+  <li ng-repeat="item in $ctrl.items">
+    {{item.name}}({{item.quantity}}개) <button ng-click="$ctrl.removeItem($index)">삭제</button>
+  </li>
+</ul>
+<div class="error">WARNING! WARNING! COOKIES DETECTED!</div>

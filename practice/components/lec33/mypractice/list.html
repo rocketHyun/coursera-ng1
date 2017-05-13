@@ -1,0 +1,9 @@
+<h1>{{ $ctrl.listTitle }}</h1>
+<ul>
+  <li ng-repeat="item in $ctrl.allList">
+    {{item.name}} ({{item.quantity}}개)<button ng-click="$ctrl.onRemove($index)">삭제</button>
+  </li>
+</ul>
+<div ng-if="$ctrl.cookiesDetect()">
+  WARNING! COOKIES DETECTED!!
+</div>

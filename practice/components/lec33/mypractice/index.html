@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>헬로우</title>
+  </head>
+  <body ng-app="myComponentApp">
+    <div ng-controller="ShoppingListController as list">
+      <input type="text" ng-model="list.itemName">
+      <input type="text" ng-model="list.itemQuantity">
+      <button type="button" name="button" ng-click="list.addItem()">추가하기</button>
+      <span>
+        {{list.lastRemoved}}
+      </span>
+      <list-component
+        list-title="{{list.title}}"
+        all-list="list.getList"
+        remove-item="list.removeItem(num)">
+
+      </list-component>
+    </div>
+  </body>
+</html>

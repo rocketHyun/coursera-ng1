@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="Hongang">
+  <head>
+    <meta charset="utf-8">
+    <title>호갱끼데쓰까</title>
+  </head>
+  <body>
+    <div ng-controller="HotIssueController as hotIssue">
+      <h1>당신의 소비는? 호갱끼데쓰까!</h1>
+      <label for="company">회사를 검색해주세요</label>
+      <input type="text" name="company" ng-model="hotIssue.search">
+      <button type="button" name="button" ui-sref="search({company:hotIssue.search})">검색!</button>
+      <div>
+        <ui-view></ui-view>
+        <loading-component
+          is-loading="hotIssue.isLoading"></loading-component>
+      </div>
+    </div>
+
+    <!-- lib -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- module -->
+    <script src="src/hogang.module.js"></script>
+
+    <!-- service -->
+    <script src="src/hogang.service.js"></script>
+
+    <!-- router -->
+    <script src="src/router.js"></script>
+
+    <!-- hotIssue -->
+    <script src="src/hotIssue/hotIssue.controller.js"></script>
+    <script src="src/loading/loading.component.js"></script>
+
+    <!-- search -->
+    <script src="src/search/search.controller.js"></script>
+  </body>
+</html>

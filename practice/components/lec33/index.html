@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Name Calculator</title>
+  </head>
+  <body ng-app="shoppingComponents">
+    <div ng-controller="ShoppingController as list">
+      <input type="text" ng-model="list.itemName" placeholder="name">
+      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+      <button type="button" name="button" ng-click="list.addList()">ADD!</button>
+
+      <shopping-list
+        list-name="{{list.title}}"
+        lists= "list.getList"
+        on-remove= "list.removeList(id)">
+
+      </shopping-list>
+    </div>
+  </body>
+</html>

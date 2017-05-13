@@ -1,0 +1,10 @@
+
+<h3>최근 이슈</h3>
+<ul>
+  <li ng-repeat="news in hotIssue.hotNews">
+    <a href="{{news.link}}" target="_blank">
+      <img ng-if="news.imgurl" src="{{news.imgurl}}" width="100px" />
+      {{news.title}}
+    </a>
+  </li>
+</ul>

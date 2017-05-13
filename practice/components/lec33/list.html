@@ -1,0 +1,13 @@
+<h1>{{$ctrl.listName}}</h1>
+<ul>
+<li ng-repeat="item in $ctrl.lists">
+  <!-- {{item.name}}({{item.quantity}}개) <button type="button" ng-click="$ctrl.onRemove({id:$index})">삭제!</button> -->
+
+  {{item.name}}({{item.quantity}}개) <button type="button" ng-click="$ctrl.remove($index)">삭제!</button>
+</li>
+</ul>
+
+<div class="error" ng-if="$ctrl.cookiesInList()">
+  warning! cookie detected
+
+</div>
