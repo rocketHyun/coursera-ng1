@@ -1,0 +1,49 @@
+<div class="container">
+  <h3>this is signup page</h3>
+  <form name="signupForm" novalidate>
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input type="text" name="firstName" ng-model="userCtrl.firstName" class="form-control" placeholder="first name" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name</label>
+      <input type="text" name="lastName" ng-model="userCtrl.lastName" class="form-control" placeholder="last name" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email Address</label>
+      <input type="email" name="email" ng-model="userCtrl.email" class="form-control" placeholder="email address" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input type="tel" name="phoneNumber" ng-model="userCtrl.phoneNumber" class="form-control" placeholder="phone number" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Menu Number of Favorite Dish <span ng-if="userCtrl.error">({{userCtrl.error}})</span></label>
+      <input type="text" name="menuNumber" ng-model="userCtrl.menuNumber" class="form-control" placeholder="menu number">
+    </div>
+    <button type="submit" class="btn btn-default" ng-disabled="signupForm.$invalid" ng-click="userCtrl.submit()">Submit</button>
+  </form>
+  <span
+    ng-if="signupForm.firstName.$error.required
+    && signupForm.firstName.$touched" >
+    First Name is required<br />
+  </span>
+  <span
+    ng-if="signupForm.lastName.$error.required
+    && signupForm.lastName.$touched" >
+    Last Name is required<br />
+  </span>
+  <span
+    ng-if="signupForm.email.$error.required
+    && signupForm.email.$touched" >
+    Email is required<br />
+  </span>
+  <span
+    ng-if="signupForm.phoneNumber.$error.required
+    && signupForm.phoneNumber.$touched" >
+    Phone Number is required
+  </span>
+  <h3>
+    {{userCtrl.success}}
+  </h3>
+</div>

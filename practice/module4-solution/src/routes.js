@@ -35,7 +35,7 @@
         controller: "ItemsController as items",
         resolve: {
           JsonItems: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams){
-            
+
             return MenuDataService.getItemsForCategory($stateParams.categoryName)
                   .then(function(response){
                     return response.data.menu_items;

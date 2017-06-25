@@ -1,0 +1,31 @@
+<div class="container">
+  <div ng-hide="userCtrl.userInfo.myMenu">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div ng-show="userCtrl.userInfo.myMenu">
+    <h3>My Info</h3>
+    <ul>
+      <li>First Name: {{userCtrl.userInfo.firstName}}</li>
+      <li>Last Name: {{userCtrl.userInfo.lastName}}</li>
+      <li>Email: {{userCtrl.userInfo.email}}</li>
+      <li>Phone Number: {{userCtrl.userInfo.phoneNumber}}</li>
+    </ul>
+    <div class="menu-item-tile col-sm-12">
+      <div class="row">
+        <h3>Favorite Dish</h3>
+        <div class="col-sm-5">
+          <div class="menu-item-photo">
+            <div>{{userCtrl.userInfo.myMenu.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="{{userCtrl.ApiPath}}/images/{{userCtrl.userInfo.myMenu.short_name}}.jpg" alt="{{userCtrl.userInfo.myMenu.name}}">
+          </div>
+          <div class="menu-item-price">{{userCtrl.userInfo.myMenu.price_small | currency}}<span> {{userCtrl.userInfo.myMenu.small_portion_name}}</span> {{userCtrl.userInfo.myMenu.price_large | currency}} <span>{{userCtrl.userInfo.myMenu.large_portion_name}}</span></div>
+        </div>
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{userCtrl.userInfo.myMenu.name}}</h3>
+          <p class="menu-item-details">{{userCtrl.userInfo.myMenu.description}}</p>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+  </div>
+</div>

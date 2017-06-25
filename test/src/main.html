@@ -1,0 +1,15 @@
+<h1>User Angular!</h1>
+
+<button type="button" ng-click="users.getUsers()">Get User!</button>
+  <ul>
+    <li ng-repeat="user in users.allUsers">
+      <a ui-sref="show({userId: user.id})">{{user.name}}</a><button ng-click="users.removeUser(user.id, $index)">삭제</button>
+    </li>
+  </ul>
+  <div>
+    <h3>Create User!</h3>
+    <input type="text" name="" placeholder="email" ng-model="users.email"><br />
+    <input type="password" name="" placeholder="password" ng-model="users.password"><br />
+    <input type="text" name="" placeholder="name" ng-model="users.name"><br />
+    <button ng-click="users.addUser()">추가!</button>
+  </div>
